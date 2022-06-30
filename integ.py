@@ -5,14 +5,15 @@ Tuesday, June 28th, 2022                                       RD Siegs
 """
 import os as os
 import fileinput
+import subprocess, bash
 
 from bash import bash
 from subprocess import PIPE, Popen
 
-
+#List of files to be scanned
 files = []
 
-
+#File scanner (w3resources)
 root = input("Which directory do you want scanned? ")
 for entry in os.scandir(root):
    if entry.is_dir():
@@ -28,22 +29,30 @@ for entry in os.scandir(root):
        typ=typ,
    ))
 
-
+#the scan function is equal to files, and the list is equal to the function. Can use interchanageably
 os.scandir(root) == files
 
 
-file.append(root)
+#append scan to list and print it
+files.append(root)
+print(files)
 
-*print(files)
-
+#Making list into string and printing it
 s = "-"
-
 x = s.join(files)
-print(x)
 
+
+#Using bash module to run the bash script to scan python list of files
 integrity = bash('bash integrity.sh' + x)
 
-print(integrity)
+
+
+
+
+
+b = bash('ls . ')
+sc = bash('bash *.sh')
+
 
 
 
