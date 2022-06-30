@@ -45,13 +45,13 @@ x = s.join(files)
 #Using bash module to run the bash script to scan python list of files
 integrity = bash('bash integrity.sh' + x)
 
+bash('bash integrity.sh' + {list})
 
 
 
 
-
-b = bash('ls . ')
-sc = bash('bash *.sh')
+ls = bash('ls . ' )
+sc = bash('bash integrity.sh')
 
 
 

@@ -10,7 +10,7 @@
 #
 
 # Change to your preferred location
-SHA1DB=/data/data/com.termux/files/home/.integ-scan/.sha1db
+SHA1DB=/data/data/com.termux/files/home/sha1-integrity-scanner/.sha1db
 
 # sha1sum is required
 if [ ! -x `which sha1sum` ]; then
