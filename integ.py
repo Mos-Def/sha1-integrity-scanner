@@ -37,6 +37,8 @@ os.scandir(root) == files
 files.append(root)
 print(files)
 
+"""
+#CODE COMMENTED OUT
 #Making list into string and printing it
 s = "-"
 x = s.join(files)
@@ -44,16 +46,17 @@ x = s.join(files)
 
 #Using bash module to run the bash script to scan python list of files
 integrity = bash('bash integrity.sh' + x)
-
-bash('bash integrity.sh' + {list})
-
-
+"""
+bash('bash integrity.sh')
 
 
+
+"""
+#CODE COMMENTED OUT
 ls = bash('ls . ' )
 sc = bash('bash integrity.sh')
 
-
+"""
 
 
 
