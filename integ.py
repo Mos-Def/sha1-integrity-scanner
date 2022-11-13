@@ -1,11 +1,12 @@
 #!/data/data/com.termux/files/usr/bin/env python3
 """
-Integrity Check                                                  UTF-8
-Tuesday, June 28th, 2022                                       RD Siegs
+Integrity Check                                            UTF-8
+Tuesday, June 28th, 2022                                   RD Siegs
 """
 import os as os
 import fileinput
 import subprocess, bash
+import PySimpleGUI
 
 from bash import bash
 from subprocess import PIPE, Popen
@@ -37,6 +38,14 @@ os.scandir(root) == files
 files.append(root)
 print(files)
 
+
+bash('bash integrity.sh')
+
+filename = sg.popup_get_file('Enter the file you wish to process')
+sg.popup('You entered', filename)
+
+bash('bash integrity.sh' + filename)
+
 """
 #CODE COMMENTED OUT
 #Making list into string and printing it
@@ -47,9 +56,6 @@ x = s.join(files)
 #Using bash module to run the bash script to scan python list of files
 integrity = bash('bash integrity.sh' + x)
 """
-bash('bash integrity.sh')
-
-
 
 """
 #CODE COMMENTED OUT
@@ -57,7 +63,6 @@ ls = bash('ls . ' )
 sc = bash('bash integrity.sh')
 
 """
-
 
 
 
